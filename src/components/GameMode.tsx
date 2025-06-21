@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect} from 'react';
 import { ArrowLeft, Trophy, Star, Clock, Sword, Shield, Heart, Zap, ChevronRight, ExternalLink, BookOpen, Scale, Gavel, Users, Globe, Target } from 'lucide-react';
 import { GameMode as GameModeType, LegalAvatar, QuestScenario, QuestChoice, QuestQuestion, QuestProgress } from '../types/game';
 import { questScenarios } from '../data/questScenarios';
@@ -19,6 +19,11 @@ export const GameMode: React.FC<GameModeProps> = ({ mode, avatar, onBack, onComp
   const [isPlaying, setIsPlaying] = useState(false);
   const [questComplete, setQuestComplete] = useState(false);
   const [finalResult, setFinalResult] = useState<'success' | 'failure' | null>(null);
+
+  useEffect(() => {
+    // Scroll to top when transitioning between questions or showing results
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, [questProgress?.currentQuestionIndex, showResult, questComplete, isPlaying]);
 
   const startQuest = (scenario: QuestScenario) => {
     setCurrentScenario(scenario);
