@@ -137,5 +137,6 @@ Whether you're a law student preparing for practice, a junior associate trying t
 
 - **Contact**: yeochloe01@gmail.com
 - **Name**: Chloe Yeo
+- **Portfolio**: https://www.youtube.com/@chloeyeocodes
 
 *Legal Legends: Where legal education meets the real world.*
